@@ -8,7 +8,7 @@ const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
   console.log('켰다.');
-  client.user.setPresence({ game: { name: '/help를 쳐보세요.' }, status: 'online' })
+  client.user.setPresence({ game: { name: 'help를 쳐보세요.' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -57,9 +57,9 @@ client.on('message', (message) => {
   } else if(message.content == 'help') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
-      {name: '/ping', desc: '현재 핑 상태'},
-      {name: '/embed', desc: 'embed 예제1'},
-      {name: '/embed2', desc: 'embed 예제2 (help)'},
+      {name: 'ping', desc: '현재 핑 상태'},
+      {name: 'embed', desc: 'embed 예제1'},
+      {name: 'embed2', desc: 'embed 예제2 (help)'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
       {name: '/청소', desc: '텍스트 지움'},
     ];
@@ -97,7 +97,7 @@ client.on('message', (message) => {
   if(message.content.startsWith('!청소')) {
     if(checkPermission(message)) return
 
-    var clearLine = message.content.slice('!청소 '.length);
+    var clearLine = message.content.slice('/청소 '.length);
     var isNum = !isNaN(clearLine)
 
     if(isNum && (clearLine <= 0 || 100 < clearLine)) {
